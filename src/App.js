@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        <div className="row">
+        <div className="row nebo">
            <div className="col-md-3">
               <div className="form-group inputWrapper">
                   <h5 className="textLabel">Please enter your data</h5>
@@ -15,9 +15,10 @@ class App extends Component {
                    <input type="text" className="form-control inputFilds" id="name" placeholder="City"/>
                    <input type="text" className="form-control inputFilds" id="name" placeholder="Address"/>
                    <input type="text" className="form-control inputFilds" id="name" placeholder="Phone"/>
-                   <Persons />
+                   
               </div>
            </div>
+           <Persons />
               
         </div>
       </div>
