@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Persons from './components/persons';
 
 class App extends Component {
   render() {
@@ -14,41 +15,10 @@ class App extends Component {
                    <input type="text" className="form-control inputFilds" id="name" placeholder="City"/>
                    <input type="text" className="form-control inputFilds" id="name" placeholder="Address"/>
                    <input type="text" className="form-control inputFilds" id="name" placeholder="Phone"/>
+                   <Persons />
               </div>
            </div>
-              <div className="col-md-9 tablePost">
-                  <table className="table">
-                      <thead>
-                        <tr>
-                          <th scope="col">Name</th>
-                          <th scope="col">Surname</th>
-                          <th scope="col">Created Data</th>
-                          <th scope="col">City</th>
-                          <th scope="col">Address</th>
-                          <th scope="col">Phone</th>
-                          <th scope="col">Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                          <td>Otto</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
-              </div>
+              
         </div>
       </div>
     );
