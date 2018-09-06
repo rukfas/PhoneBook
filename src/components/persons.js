@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Button } from 'reactstrap';
 
 
 class Person extends Component {
@@ -13,14 +14,27 @@ class Person extends Component {
 
 
     componentDidMount() {
+     this.loadUsers();
+    }
+
+    loadUsers = () => {
         axios.get('https://phonebookapi.herokuapp.com/api/allPersons')
-            .then(response => {
-                this.setState({ ...this.state, persons: response.data.persons });
-            });
+        .then(response => {
+            this.setState({ ...this.state, persons: response.data.persons });
+        });
+    }
+
+    deleteUser = (user) => {
+        axios.delete('https://phonebookapi.herokuapp.com/api/deletePerson/' + user)
+        .then(response => {
+            if (response.status === 200) {
+                this.loadUsers()
+            }
+        });
     }
 
     render() {
-        console.log(this.state);
+        console.log(this.props);
         if (!this.state.persons) {
             return <h1>...Loading</h1>
         } else {
@@ -55,7 +69,10 @@ class Person extends Component {
                                         <td>{person.city}</td>
                                         <td>{person.address}</td>
                                         <td>{person.phone}</td>
-                                        <td>@mdo</td>
+                                        <td>
+                                            <Button color='primary' onClick={this.props.saljem} style= {{marginRight: '4%'}} >Edit</Button>
+                                            <Button color='danger' onClick={this.deleteUser.bind(this, person._id)}>Delete</Button>
+                                        </td>
                                     </tr>
                                 );
                             })}
