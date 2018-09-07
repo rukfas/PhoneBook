@@ -8,6 +8,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5",
+    "react-skylight": "^0.5.1",
     "reactstrap": "^6.4.0"
   },
   "scripts": {
